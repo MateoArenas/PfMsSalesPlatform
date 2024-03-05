@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using PfMsSalesPlatform.Infrastructure.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//DB connection
+string connectionString = builder.Configuration.GetValue<string>("ConnectionStrings:DefaultConnection");
+builder.Services.AddDbContext<SalesDBContext>(x => x.UseSqlServer(connectionString));
+
 
 var app = builder.Build();
 
