@@ -13,11 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PfMsSalesPlatform.Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{36E2CA8C-83CF-4D6D-9685-152B32EA9A7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PfMsSalesPlatform.Test.Application", "PfMsSalesPlatform.Test.Application\PfMsSalesPlatform.Test.Application.csproj", "{15E3F684-960A-402E-AE53-0B92283A2B5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PfMsSalesPlatform.Test.Application", "Tests\PfMsSalesPlatform.Test.Application\PfMsSalesPlatform.Test.Application.csproj", "{15E3F684-960A-402E-AE53-0B92283A2B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PfMsSalesPlatform.Test.Domain", "PfMsSalesPlatform.Test.Domain\PfMsSalesPlatform.Test.Domain.csproj", "{BE21098F-BCBA-409E-9A0F-5FCC0CB75B72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PfMsSalesPlatform.Test.Domain", "Tests\PfMsSalesPlatform.Test.Domain\PfMsSalesPlatform.Test.Domain.csproj", "{BE21098F-BCBA-409E-9A0F-5FCC0CB75B72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PfMsSalesPlatform.Test.Infrastructure", "PfMsSalesPlatform.Test.Infrastructure\PfMsSalesPlatform.Test.Infrastructure.csproj", "{4362F285-38BC-4D29-B796-62CF38D152D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PfMsSalesPlatform.Test.Infrastructure", "Tests\PfMsSalesPlatform.Test.Infrastructure\PfMsSalesPlatform.Test.Infrastructure.csproj", "{4362F285-38BC-4D29-B796-62CF38D152D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
