@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PfMsSalesPlatform.Infrastructure.Context;
+using PfMsSalesPlatform.Infrastructure.Repositories.UnitWork;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen();
 string connectionString = builder.Configuration.GetValue<string>("ConnectionStrings:DefaultConnection");
 builder.Services.AddDbContext<SalesDBContext>(x => x.UseSqlServer(connectionString));
 
+//Dependency Inyections
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
