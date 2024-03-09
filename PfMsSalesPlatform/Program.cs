@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using PfMsSalesPlatform.Application.Handlers.Clients;
 using PfMsSalesPlatform.Infrastructure.Context;
 using PfMsSalesPlatform.Infrastructure.Repositories.UnitWork;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,14 @@ builder.Services.AddDbContext<SalesDBContext>(x => x.UseSqlServer(connectionStri
 
 //Dependency Inyections
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+//CQRS
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetOneClientTypeHandler).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetAllClientTypeHandler).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateClientTypeHandler).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(UpdateClientTypeHandler).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(DeleteClientTypeHandler).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
 var app = builder.Build();
 
