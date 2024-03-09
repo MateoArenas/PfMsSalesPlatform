@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Commands\" />
-    <Folder Include="Handlers\" />
-    <Folder Include="Querys\" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PfMsSalesPlatform.Domain\PfMsSalesPlatform.Domain.csproj" />
+    <ProjectReference Include="..\PfMsSalesPlatform.Infrastructure\PfMsSalesPlatform.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

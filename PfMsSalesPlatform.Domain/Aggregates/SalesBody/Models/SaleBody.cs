@@ -14,8 +14,12 @@ namespace PfMsSalesPlatform.Domain.Aggregates.SalesBody.Models
         public int SaleHeaderId { get; set; }
         [ForeignKey("SaleHeaderId")]
         public virtual SaleHeader SaleHeader { get; set; }
+
+        [Required]
         public int Amount { get; set; }
-        public int Price { get; set; }
+
+        [Required]
+        public double Price { get; set; }
 
         [Required]
         public int ProductId { get; set; }
