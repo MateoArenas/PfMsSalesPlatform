@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using PfMsSalesPlatform.Application.Handlers.Clients;
 using PfMsSalesPlatform.Infrastructure.Context;
 using PfMsSalesPlatform.Infrastructure.Repositories.UnitWork;
+using PfMsSalesPlatform.Middalware;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,9 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Upd
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(DeleteClientTypeHandler).Assembly));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
+//Middelware
+builder.Services.AddTransient<GlobalMiddalwareExceptions>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,6 +44,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<GlobalMiddalwareExceptions>();
 
 app.MapControllers();
 

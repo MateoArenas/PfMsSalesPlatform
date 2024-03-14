@@ -41,10 +41,10 @@ namespace PfMsSalesPlatform.Application.Handlers.Clients
                     Discount = clientType.Discount,
                 };
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 _unitOfWork?.Rollback();
-                return null;
+                throw new Exception($"Error al actualziar el tipo cliente. Error: {ex}");
             }
         }
     }
