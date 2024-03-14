@@ -31,9 +31,9 @@ namespace PfMsSalesPlatform.Application.Handlers.Clients
                         Discount = clientType.Discount,
                     };
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return null;
+                throw new Exception($"Error al obtener el tipo cliente. Error: {ex}");
             }     
         }
     }

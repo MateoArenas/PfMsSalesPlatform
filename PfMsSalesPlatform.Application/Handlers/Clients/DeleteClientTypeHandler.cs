@@ -28,10 +28,11 @@ namespace PfMsSalesPlatform.Application.Handlers.Clients
 
                 return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 _unitOfWork.Rollback();
-                return false;
+
+                throw new Exception($"Error al eliminar el tipo cliente. Error: {ex}");
             }
         }
     }

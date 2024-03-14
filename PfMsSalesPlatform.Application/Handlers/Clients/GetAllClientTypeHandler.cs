@@ -30,9 +30,9 @@ namespace PfMsSalesPlatform.Application.Handlers.Clients
                     TypeName = x.TypeName,
                 }).ToList();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new List<ClientTypeDto>();
+                throw new Exception($"Error al obtener los tipos cliente. Error: {ex}");
             }
         }
     }
