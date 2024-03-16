@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PfMsSalesPlatform.Application.Commands.Clients;
 using PfMsSalesPlatform.Application.DTOs;
@@ -7,6 +8,7 @@ using PfMsSalesPlatform.Application.Querys.Clients;
 namespace PfMsSalesPlatform.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class ClientTypeController : Controller
     {
